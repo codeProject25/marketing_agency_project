@@ -1,26 +1,62 @@
-/* color variables */
-/*spacing variables*/
+/* Color variables */
+/*Spacing variables*/
+/* Typography */
 header {
   display: flex;
+  justify-content: space-between;
   height: 88px;
   padding: 18px 0px;
-  justify-content: center;
   align-items: center;
 }
 
+#callButton {
+  display: none;
+}
+@media (min-width: 1024px) {
+  #callButton {
+    display: block;
+  }
+}
+
 .navigation {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex: 1 0 0;
+    align-self: stretch;
+  }
+}
+
+.burger {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex: 1 0 0;
-  align-self: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
 }
 
 .hero {
   display: flex;
   flex-direction: column;
-  padding: 40px 60px;
+  padding: 40px 0px;
   max-width: 100%;
   gap: 32px;
 }
@@ -31,20 +67,19 @@ header {
 }
 .hero .hero-title-container {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  flex-direction: column;
   gap: 32px;
 }
 .hero .hero-title-container .frame-title {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 28px;
 }
 .hero .hero-title-container .frame-input {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 12px;
   width: 100%;
 }
@@ -61,6 +96,7 @@ header {
 }
 @media (min-width: 768px) {
   .hero {
+    align-items: center;
     gap: 40px;
     padding: 60px 0 80px 0;
   }
@@ -124,11 +160,11 @@ header {
 h1 {
   color: #000;
   font-feature-settings: "liga" off, "clig" off;
-  font-family: "General Sans Variable";
-  font-size: 96px;
+  font-family: "General Sans Variable", sans-serif;
   font-style: normal;
+  font-size: 96px;
   font-weight: 600;
-  line-height: 98.5px; /* 102.604% */
+  line-height: 1.1;
   letter-spacing: -4px;
   text-transform: capitalize;
 }
@@ -136,21 +172,21 @@ h1 {
 p {
   color: rgba(0, 0, 0, 0.6);
   font-feature-settings: "liga" off, "clig" off;
-  font-family: "General Sans Variable";
-  font-size: 20px;
+  font-family: "General Sans Variable", sans-serif;
   font-style: normal;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 32px; /* 160% */
+  line-height: 1.6;
 }
 
 input {
   color: #aaa;
   font-feature-settings: "liga" off, "clig" off;
-  font-family: "General Sans Variable";
-  font-size: 18px;
+  font-family: "General Sans Variable", sans-serif;
   font-style: normal;
+  font-size: 18px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.5;
   text-transform: capitalize;
 }
 
@@ -158,10 +194,11 @@ input {
   color: #ffffff;
   font-feature-settings: "liga" off, "clig" off;
   font-family: "General Sans Variable", sans-serif;
+  font-style: normal;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.5;
   text-transform: capitalize;
   border: none;
 }
@@ -186,11 +223,11 @@ input {
   color: #000;
   background: #ffffff;
   font-feature-settings: "liga" off, "clig" off;
-  font-family: "General Sans Variable";
-  font-size: 16px;
+  font-family: "General Sans Variable", sans-serif;
   font-style: normal;
+  font-size: 16px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.5;
   text-transform: capitalize;
   border: none;
   cursor: pointer;
