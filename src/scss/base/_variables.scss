@@ -1,0 +1,39 @@
+/* Color variables */
+// Brand Colors
+$color-primary: #3461ff;
+$color-white: #ffffff;
+$color-black: #000000;
+
+/*Spacing variables*/
+// Spacing System
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 48px;
+
+/* Typography */
+$font-family: "General Sans Variable", sans-serif;
+
+// Base
+$font-size-base: 16px;
+
+$font-size-heading: 96px;
+$font-size-subheading: 64px;
+$font-size-frame-heading: 32px;
+$font-size-card-heading: 28px;
+$font-size-card-subheading: 20px;
+$font-size-text-medium: 18px;
+
+// Font weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line heights
+$line-height-tight: 1.1;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.6;
