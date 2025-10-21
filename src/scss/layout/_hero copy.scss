@@ -1,0 +1,123 @@
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 84px 0 122px 0;
+  max-width: 100%;
+  gap: 60px;
+
+  > img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    flex: 1; // Allow image to take remaining space
+    object-fit: contain;
+  }
+  .hero-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
+
+    .frame-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    .frame-input {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      input {
+        padding: 20px 18px;
+        gap: 10px;
+        border-radius: 37px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background: #fafafa;
+      }
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: column;
+    gap: 40px;
+
+    .hero-title-container {
+      align-items: center;
+      gap: 44px;
+
+      .frame-title {
+        align-items: center;
+        gap: 28px;
+
+        > h1 {
+          text-align: center;
+        }
+      }
+
+      .frame-input {
+        align-items: center;
+        gap: 12px;
+
+        input {
+          padding: 20px 18px;
+          gap: 10px;
+          border-radius: 37px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          background: #fafafa;
+        }
+      }
+    }
+
+    > img {
+      max-width: 80%;
+    }
+  }
+
+  @include media-laptop {
+    .hero {
+      display: flex;
+      align-items: center;
+      padding: 84px 0 122px 0;
+      max-width: 100%;
+      gap: 60px;
+
+      > img {
+        max-width: 100%;
+        height: auto;
+        flex: 1;
+        object-fit: contain;
+      }
+
+      .hero-title-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 44px;
+        flex: 1;
+
+        .frame-title {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 28px;
+        }
+
+        .frame-input {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          input {
+            padding: 20px 18px;
+            gap: 10px;
+            border-radius: 37px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: #fafafa;
+          }
+        }
+      }
+    }
+  }
+}

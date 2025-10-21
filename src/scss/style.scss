@@ -1,8 +1,120 @@
-$primary-color: #007acc;
+@import "base/mixins";
+@import "base/responsive";
+@import "base/variables";
+@import "layout/header";
+@import "layout/hero";
 
-body {
-  font-family: sans-serif;
-  background: white;
-  color: $primary-color;
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @include media-tablet {
+    padding: 0 32px;
+  }
+
+  @include media-laptop {
+    padding: 0px 120px;
+  }
+}
+
+h1 {
+  color: #000;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "General Sans Variable";
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 98.5px; /* 102.604% */
+  letter-spacing: -4px;
+  text-transform: capitalize;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.6);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "General Sans Variable";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 160% */
+}
+
+input {
+  color: #aaa;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "General Sans Variable";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.button {
+  color: $color-white;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: $font-primary;
+  font-size: $font-size-text-medium;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  border: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button.primary {
+  padding: 16px 24px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 70px;
+  background: $color-primary;
+  transition:
+    background 0.4s,
+    color 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.navigation {
+  > button {
+    color: #000;
+    background: $color-white;
+    font-feature-settings:
+      "liga" off,
+      "clig" off;
+    font-family: "General Sans Variable";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
