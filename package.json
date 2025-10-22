@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css",
+    "build": "sass docs/scss:docs/dist/css",
+    "watch": "sass --watch docs/scss:docs/dist/css",
     "format": "prettier --write ."
   },
   "keywords": [],
