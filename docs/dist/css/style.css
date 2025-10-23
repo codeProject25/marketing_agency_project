@@ -26,8 +26,6 @@ header {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex: 1 0 0;
-    align-self: stretch;
   }
 }
 
@@ -61,7 +59,6 @@ header {
   gap: 32px;
 }
 .hero > img {
-  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -70,15 +67,14 @@ header {
   align-items: flex-start;
   flex-direction: column;
   gap: 32px;
+  max-width: 100%;
 }
 .hero .hero-title-container .frame-title {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  margin-bottom: 28px;
 }
 .hero .hero-title-container .frame-input {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   gap: 12px;
   width: 100%;
@@ -92,7 +88,7 @@ header {
   background: #fafafa;
 }
 .hero .hero-title-container .frame-input .button {
-  width: 100%;
+  min-width: 140px;
 }
 @media (min-width: 768px) {
   .hero {
@@ -101,20 +97,20 @@ header {
     padding: 60px 0 80px 0;
   }
   .hero > img {
-    max-width: 70%;
+    max-width: 50%;
   }
   .hero .hero-title-container {
     gap: 44px;
   }
   .hero .hero-title-container .frame-input {
+    align-items: center;
     flex-direction: row;
   }
   .hero .hero-title-container .frame-input input {
-    width: auto;
     flex: 1;
   }
   .hero .hero-title-container .frame-input .button {
-    width: auto;
+    min-width: 140px;
   }
 }
 @media (min-width: 1024px) {
@@ -125,8 +121,7 @@ header {
     padding: 84px 0 122px 0;
   }
   .hero > img {
-    flex: 1;
-    max-width: 100%;
+    max-width: 50%;
   }
   .hero .hero-title-container {
     flex: 1;
@@ -159,11 +154,7 @@ header {
 
 h1 {
   color: #000;
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
   font-family: "General Sans Variable", sans-serif;
-  font-style: normal;
   font-size: 96px;
   font-weight: 600;
   line-height: 1.1;
@@ -173,11 +164,7 @@ h1 {
 
 p {
   color: rgba(0, 0, 0, 0.6);
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
   font-family: "General Sans Variable", sans-serif;
-  font-style: normal;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
@@ -185,11 +172,7 @@ p {
 
 input {
   color: #aaa;
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
   font-family: "General Sans Variable", sans-serif;
-  font-style: normal;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
@@ -198,12 +181,8 @@ input {
 
 .button {
   color: #ffffff;
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
   font-family: "General Sans Variable", sans-serif;
-  font-style: normal;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
@@ -220,30 +199,40 @@ input {
   gap: 10px;
   border-radius: 70px;
   background: #3461ff;
-  transition:
-    background 0.4s,
-    color 0.2s;
+  transition: background 0.4s, color 0.2s;
 }
 .button.primary:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.navigation > button {
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+.navigation li {
+  margin: 0;
+  padding: 0;
+}
+.navigation a {
   color: #000;
   background: #ffffff;
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
   font-family: "General Sans Variable", sans-serif;
-  font-style: normal;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   text-transform: capitalize;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
 }
-.navigation > button:hover {
+.navigation a:hover {
   text-decoration: underline;
 }
+
+/*# sourceMappingURL=style.css.map */

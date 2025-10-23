@@ -27,7 +27,7 @@
 
 h1 {
   color: #000;
-  @include typographyBase;
+  font-family: $font-family;
   font-size: $font-size-heading;
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
@@ -37,7 +37,7 @@ h1 {
 
 p {
   color: rgba(0, 0, 0, 0.6);
-  @include typographyBase;
+  font-family: $font-family;
   font-size: $font-size-card-subheading;
   font-weight: $font-weight-medium;
   line-height: $line-height-relaxed;
@@ -45,7 +45,7 @@ p {
 
 input {
   color: #aaa;
-  @include typographyBase;
+  font-family: $font-family;
   font-size: $font-size-text-medium;
   font-weight: $font-weight-medium;
   line-height: $line-height-normal;
@@ -53,8 +53,8 @@ input {
 }
 .button {
   color: $color-white;
-  @include typographyBase;
-  font-size: $font-size-text-medium;
+  font-family: $font-family;
+  font-size: $font-size-base;
   font-style: normal;
   font-weight: $font-weight-medium;
   line-height: $line-height-normal;
@@ -83,16 +83,32 @@ input {
 }
 
 .navigation {
-  > button {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
     color: #000;
     background: $color-white;
-    @include typographyBase;
+    font-family: $font-family;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
     line-height: $line-height-normal;
     text-transform: capitalize;
     border: none;
     cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
 
     &:hover {
       text-decoration: underline;

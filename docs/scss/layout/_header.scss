@@ -20,8 +20,6 @@ header {
   @include media-laptop {
     @include flexSpaceCenter;
     gap: 40px;
-    flex: 1 0 0;
-    align-self: stretch;
   }
 }
 
