@@ -3,6 +3,7 @@
 @import "base/variables";
 @import "layout/header";
 @import "layout/hero";
+@import "layout/partners";
 
 *,
 *::before,
@@ -13,25 +14,36 @@
 }
 .container {
   width: 100%;
-  padding: 0 16px;
+  padding: 16px;
   margin: 0 auto;
 
   @include media-tablet {
-    padding: 0 32px;
+    padding: 36px;
   }
 
   @include media-laptop {
-    padding: 0px 120px;
+    padding: 120px;
   }
 }
 
 h1 {
-  color: #000;
+  color: $color-black;
   font-family: $font-family;
   font-size: $font-size-heading;
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
   letter-spacing: -4px;
+  text-transform: capitalize;
+}
+
+h2 {
+  color: $color-black;
+  text-align: center;
+  font-family: $font-family;
+  font-size: $font-size-frame-heading;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  letter-spacing: -1px;
   text-transform: capitalize;
 }
 
