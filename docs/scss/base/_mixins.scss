@@ -1,12 +1,4 @@
 // Typography mixins
-@mixin typographyBase {
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
-  font-family: $font-family;
-  font-style: normal;
-}
-
 @mixin responsive-font($mobile, $tablet: null, $desktop: null) {
   font-size: $mobile;
 
