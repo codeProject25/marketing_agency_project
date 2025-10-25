@@ -4,6 +4,7 @@
 @import "layout/header";
 @import "layout/hero";
 @import "layout/partners";
+@import "layout/commitments";
 
 *,
 *::before,
@@ -34,17 +35,25 @@ h1 {
   line-height: $line-height-tight;
   letter-spacing: -4px;
   text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-heading;
+  }
 }
 
 h2 {
   color: $color-black;
   text-align: center;
   font-family: $font-family;
-  font-size: $font-size-frame-heading;
+  font-size: $font-size-frame-heading-mobile;
   font-weight: $font-weight-medium;
   line-height: $line-height-normal;
   letter-spacing: -1px;
   text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-frame-heading;
+  }
 }
 
 p {
@@ -53,6 +62,20 @@ p {
   font-size: $font-size-card-subheading;
   font-weight: $font-weight-medium;
   line-height: $line-height-relaxed;
+  text-align: start;
+}
+
+.big-number {
+  color: $color-black;
+  font-family: $font-family;
+  font-size: $font-size-subheading-mobile;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-subheading;
+  }
 }
 
 input {
@@ -125,5 +148,22 @@ input {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.link-with-arrow {
+  color: $color-primary;
+  font-family: font-family;
+  font-size: $font-size-text-medium;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: start;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

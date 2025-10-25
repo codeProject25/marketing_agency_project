@@ -4,8 +4,7 @@
 
 .partner-logos-frame-1,
 .partner-logos-frame-2 {
-  @include flexSpaceCenter;
-  align-items: center;
+  @include flexCenter;
   flex-direction: column;
 
   > a {
