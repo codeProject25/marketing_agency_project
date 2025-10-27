@@ -2,14 +2,14 @@
   @include flexCenter;
   flex-direction: column;
   text-align: center;
-  padding: 48px 16px;
+  // padding: 48px 16px;
   gap: 40px;
 
   .commitments-frame-1,
   .commitments-frame-2,
   .commitments-frame-column {
     flex-direction: column;
-    gap: 24px;
+    gap: 40px;
   }
 
   .column-padding {
@@ -23,22 +23,47 @@
 
   @include media-tablet {
     align-items: flex-start;
-    padding: 64px 32px;
+    // padding: 64px 32px;
     flex-direction: row;
+    gap: 60px;
+
+    .commitments-frame-1 {
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .commitments-frame-column {
+      flex: 1;
+      max-width: 300px;
+    }
   }
 
   @include media-laptop {
     justify-content: space-between;
     flex-direction: row;
-
     text-align: left;
+    // padding: 80px 120px;
+    gap: 60px;
 
     .commitments-frame-1 {
-      @include flexSpaceBetween;
+      display: inline-flex;
       flex-direction: row;
+      align-items: flex-start;
+      gap: 60px;
+      flex: 1;
     }
+
+    .commitments-frame-2 {
+      display: inline-flex;
+      flex: 1;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
     .commitments-frame-column {
-      @include flexSpaceBetween;
+      align-items: flex-start;
+      flex: 1;
+      max-width: none;
     }
     .column-padding {
       padding-bottom: 40px;

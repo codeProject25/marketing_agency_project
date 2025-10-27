@@ -180,14 +180,13 @@ header {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 48px 16px;
   gap: 40px;
 }
 .commitments .commitments-frame-1,
 .commitments .commitments-frame-2,
 .commitments .commitments-frame-column {
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
 }
 .commitments .column-padding {
   padding-bottom: 0;
@@ -199,8 +198,16 @@ header {
 @media (min-width: 768px) {
   .commitments {
     align-items: flex-start;
-    padding: 64px 32px;
     flex-direction: row;
+    gap: 60px;
+  }
+  .commitments .commitments-frame-1 {
+    justify-content: center;
+    gap: 60px;
+  }
+  .commitments .commitments-frame-column {
+    flex: 1;
+    max-width: 300px;
   }
 }
 @media (min-width: 1024px) {
@@ -208,21 +215,151 @@ header {
     justify-content: space-between;
     flex-direction: row;
     text-align: left;
+    gap: 60px;
   }
   .commitments .commitments-frame-1 {
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
     flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+    flex: 1;
+  }
+  .commitments .commitments-frame-2 {
+    display: inline-flex;
+    flex: 1;
+    align-items: flex-start;
+    gap: 24px;
   }
   .commitments .commitments-frame-column {
-    display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    max-width: none;
   }
   .commitments .column-padding {
     padding-bottom: 40px;
   }
   .commitments .column-margin {
     margin-bottom: 70px;
+  }
+}
+
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 16px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .goals {
+    padding: 60px 32px;
+    gap: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .goals {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 80px 120px;
+  }
+}
+
+.goals-frame-right,
+.goals-frame-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 42px;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .goals-frame-right,
+  .goals-frame-left {
+    flex: 1;
+    width: auto;
+  }
+}
+
+.goals-text-frame-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .goals-text-frame-left {
+    max-width: 500px;
+  }
+}
+.goals-text-frame-left > p {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.goals-text-frame-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.goals-frame-right-with-img {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+.goals-frame-right-with-img > div {
+  flex: 1;
+}
+.goals-frame-right-with-img img {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.goals-frame-left img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.portfolio {
+  text-align: center;
+}
+.portfolio h2,
+.portfolio p {
+  text-align: center;
+}
+
+.img-with-text-frame {
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  margin: 40px 0px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.img-with-text-frame img {
+  max-width: 100%;
+  height: auto;
+}
+.img-with-text-frame figcaption {
+  color: #000000;
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+@media (min-width: 1024px) {
+  .img-with-text-frame {
+    flex-wrap: nowrap;
   }
 }
 
@@ -267,6 +404,22 @@ h1 {
 
 h2 {
   color: #000000;
+  text-align: left;
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 64px;
+  }
+}
+
+h3 {
+  color: #000000;
   text-align: center;
   font-family: "General Sans Variable", sans-serif;
   font-size: 36px;
@@ -276,8 +429,22 @@ h2 {
   text-transform: capitalize;
 }
 @media (min-width: 1024px) {
-  h2 {
+  h3 {
     font-size: 36px;
+  }
+}
+
+h4 {
+  color: #000000;
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+@media (min-width: 1024px) {
+  h4 {
+    font-size: 32px;
   }
 }
 
@@ -293,7 +460,7 @@ p {
 .big-number {
   color: #000000;
   font-family: "General Sans Variable", sans-serif;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 600;
   line-height: 1.5;
   text-transform: capitalize;

@@ -5,6 +5,8 @@
 @import "layout/hero";
 @import "layout/partners";
 @import "layout/commitments";
+@import "layout/goals";
+@import "layout/portfolio";
 
 *,
 *::before,
@@ -43,6 +45,21 @@ h1 {
 
 h2 {
   color: $color-black;
+  text-align: left;
+  font-family: $font-family;
+  font-size: $font-size-subheading-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-subheading;
+  }
+}
+
+h3 {
+  color: $color-black;
   text-align: center;
   font-family: $font-family;
   font-size: $font-size-frame-heading-mobile;
@@ -53,6 +70,19 @@ h2 {
 
   @include media-laptop {
     font-size: $font-size-frame-heading;
+  }
+}
+
+h4 {
+  color: $color-black;
+  font-family: $font-family;
+  font-size: $font-size-frame-subheading;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-frame-subheading;
   }
 }
 
@@ -68,7 +98,7 @@ p {
 .big-number {
   color: $color-black;
   font-family: $font-family;
-  font-size: $font-size-subheading-mobile;
+  font-size: $font-size-frame-heading-mobile;
   font-weight: $font-weight-semibold;
   line-height: $line-height-normal;
   text-transform: capitalize;
