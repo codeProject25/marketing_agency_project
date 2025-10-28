@@ -747,6 +747,103 @@ header {
     gap: 24px;
   }
 }
+.help-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 40px;
+}
+.help-section .help-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.help-section .help-block p {
+  color: #000000;
+  text-align: left;
+  margin: 0;
+}
+.help-section .help-block img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.help-section .frame-input {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.help-section .frame-input input {
+  width: 100%;
+  padding: 20px 18px;
+  gap: 10px;
+  border-radius: 37px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fafafa;
+}
+.help-section .help-section-frame-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+.help-section .help-section-frame-2 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .help-section {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 60px;
+  }
+  .help-section .help-section-frame-1 {
+    flex: 1;
+  }
+  .help-section .help-section-frame-2 {
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .help-section {
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 120px;
+    padding: 140px 120px;
+  }
+  .help-section .help-section-frame-1 {
+    flex: 1;
+    max-width: 100%;
+  }
+  .help-section .help-block {
+    padding: 32px 0;
+  }
+  .help-section .help-section-frame-2 {
+    flex: 1;
+    max-width: 100%;
+    gap: 42px;
+  }
+  .help-section .help-section-frame-2 .frame-input {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
 *,
 *::before,
 *::after {
