@@ -3,6 +3,9 @@
 $color-primary: #3461ff;
 $color-white: #ffffff;
 $color-black: #000000;
+$color-silver: rgba(0, 0, 0, 0.6);
+$color-background: #fafafa;
+$color-black-background: #232038;
 
 /*Spacing variables*/
 // Spacing System
@@ -20,12 +23,18 @@ $font-family: "General Sans Variable", sans-serif;
 // Base
 $font-size-base: 16px;
 
+$font-size-heading-mobile: 64px;
 $font-size-heading: 96px;
+$font-size-subheading-mobile: 48px;
 $font-size-subheading: 64px;
-$font-size-frame-heading: 32px;
+$font-size-frame-heading-mobile: 36px;
+$font-size-frame-heading: 36px;
+$font-size-frame-subheading: 32px;
 $font-size-card-heading: 28px;
 $font-size-card-subheading: 20px;
 $font-size-text-medium: 18px;
+$font-size-text-small: 16px;
+$font-size-text-tiny: 14px;
 
 // Font weights
 $font-weight-regular: 400;

@@ -1,0 +1,205 @@
+.testimonials {
+  padding: 48px 16px;
+  width: 100%;
+  overflow: hidden; // Щоб картки не виходили за межі
+
+  @include media-tablet {
+    padding: 64px 32px;
+  }
+
+  @include media-laptop {
+    padding: 80px 120px;
+  }
+}
+
+.testimonials__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.testimonials__header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 60px;
+  align-items: center;
+
+  @include media-laptop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 64px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+
+    @include media-laptop {
+      font-size: 56px;
+      max-width: 700px;
+    }
+  }
+}
+
+.slider__controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.slider__btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #e8eaed;
+  color: #5f6368;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: 600;
+
+  @include media-laptop {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+  }
+
+  &:hover:not(:disabled) {
+    background: #d2d5da;
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &--right {
+    background: $color-primary;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: darken($color-primary, 8%);
+    }
+  }
+}
+
+// Slider wrapper
+.slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease-in-out;
+
+  @include media-laptop {
+    gap: 32px;
+  }
+}
+
+// Testimonial card
+.testimonial {
+  background: #f5f5f7;
+  border-radius: 32px;
+  padding: 36px 32px;
+  min-width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  @include media-tablet {
+    min-width: calc(50% - 12px);
+    min-height: 320px;
+  }
+
+  @include media-laptop {
+    max-width: 550px;
+    min-height: 232px;
+    padding: 40px 36px;
+  }
+
+  // later for blue card
+  &--active {
+    background: $color-primary;
+
+    .testimonial__name,
+    .testimonial__text {
+      color: white;
+    }
+
+    .testimonial__position {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  font-style: normal;
+}
+
+.testimonial__photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  @include media-laptop {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+.testimonial__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial__name {
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+  color: $color-black;
+  margin: 0;
+  line-height: 1.3;
+
+  @include media-laptop {
+    font-size: 24px;
+  }
+}
+
+.testimonial__position {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 1.4;
+
+  @include media-laptop {
+    font-size: 16px;
+  }
+}
+
+.testimonial__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+
+  @include media-laptop {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}

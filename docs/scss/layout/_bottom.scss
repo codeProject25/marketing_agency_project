@@ -1,0 +1,122 @@
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $color-background;
+
+  .bottom-frame-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 24px 0;
+
+    .logo {
+      margin-bottom: 8px;
+    }
+
+    .icons-bottom {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: transparent;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.7;
+          text-decoration: none;
+        }
+
+        img {
+          display: block;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  .bottom-frame-right {
+    ul {
+      list-style: none;
+
+      li {
+        margin: 0 0 40px 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      a {
+        color: #000;
+        background: transparent;
+        font-family: $font-family;
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-normal;
+        text-transform: capitalize;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 8px 16px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        background-color: $color-background;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: row;
+    gap: 48px;
+
+    .bottom-frame-left {
+      align-items: flex-start;
+      flex: 1;
+      margin: 0;
+
+      button {
+        width: auto;
+      }
+    }
+
+    .bottom-frame-right {
+      display: flex;
+      ul {
+        align-items: flex-start;
+        a {
+          // text-align: left;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  @include media-laptop {
+    .bottom-frame-left {
+      justify-content: space-between;
+
+      .icons-bottom {
+        gap: 32px;
+      }
+    }
+
+    .bottom-frame-right {
+      gap: 60px;
+    }
+  }
+}

@@ -1,8 +1,14 @@
 header {
   @include flexSpaceBetween;
   height: 88px;
-  padding: 18px 0px;
   align-items: center;
+  padding: 0px 16px;
+  @include media-tablet {
+    padding: 0px 32px;
+  }
+  @include media-laptop {
+    padding: 0px 120px;
+  }
 }
 
 // Hide "Book A Call" button on mobile/tablet
@@ -20,8 +26,6 @@ header {
   @include media-laptop {
     @include flexSpaceCenter;
     gap: 40px;
-    flex: 1 0 0;
-    align-self: stretch;
   }
 }
 

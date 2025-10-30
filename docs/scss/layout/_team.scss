@@ -1,0 +1,52 @@
+.team {
+  @include flexCenter;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  // padding: 48px 16px;
+  gap: 40px;
+
+  .team-frame-1,
+  .team-frame-2 {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 40px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      font-size: $font-size-text-small;
+    }
+  }
+
+  @include media-tablet {
+    align-items: center;
+    flex-direction: row;
+
+    .team-frame-2 {
+      max-width: 486px;
+      align-items: flex-start;
+      gap: 30px;
+    }
+  }
+
+  @include media-laptop {
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: left;
+    gap: 60px;
+
+    .team-frame-1 {
+      flex: 1;
+      align-items: flex-start;
+    }
+    .team-frame-2 {
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 68px;
+    }
+  }
+}

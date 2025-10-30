@@ -1,0 +1,82 @@
+.banner-2 {
+  width: 100%;
+
+  .banner-2-frame {
+    width: 100%;
+    background: $color-black-background;
+    border-radius: 30px;
+    padding: 32px 24px;
+
+    @include flexCenter;
+    flex-direction: column;
+    gap: 24px;
+
+    h2 {
+      color: $color-white;
+      max-width: 393px;
+      text-align: start;
+    }
+
+    p {
+      color: $color-white;
+      opacity: 0.8;
+      text-align: start;
+    }
+
+    .banner-2-frame-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      > button {
+        background-color: $color-white;
+        color: $color-primary;
+      }
+    }
+
+    .banner-2-frame-right {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+@include media-tablet {
+  .banner-2 {
+    .banner-2-frame {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 48px;
+      border-radius: 40px;
+    }
+
+    .banner-2-frame-right {
+      flex: 1;
+      align-items: flex-start;
+    }
+    .banner-2-frame-left {
+      flex: 2;
+      align-items: flex-start;
+    }
+  }
+}
+
+@include media-laptop {
+  .banner-2 {
+    .banner-2-frame {
+      padding: 89px 75px;
+      flex-direction: row;
+    }
+
+    h2 {
+      font-size: 48px;
+      text-align: left;
+    }
+
+    .banner-2-frame-left {
+      gap: 24px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.partners {
+  background: $color-background;
+}
+
+.partner-logos-frame-1,
+.partner-logos-frame-2 {
+  @include flexCenter;
+  flex-direction: column;
+
+  > a {
+    margin: 30px 0px;
+  }
+
+  @include media-tablet {
+    @include flexSpaceEvenly;
+    margin: 78px 0px;
+    flex-direction: row;
+
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+  }
+
+  @include media-laptop {
+    @include flexSpaceBetween;
+    margin: 78px 0px;
+  }
+}

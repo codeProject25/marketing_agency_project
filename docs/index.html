@@ -7,57 +7,456 @@
     <link rel="stylesheet" href="dist/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
+    <!-- <div class="container"> -->
+    <header>
+      <div class="logo">
+        <img src="assets/logo.png" width="144px" height="32px" alt="logo" />
+      </div>
+
+      <!--  burger menu -->
+      <div class="burger" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="navigation" id="navigation">
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#our-work">Our Work</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about-us">About Us</a></li>
+        </ul>
+      </nav>
+      <button class="button primary" id="callButton">Book A Call</button>
+    </header>
+    <section class="hero container">
+      <div class="hero-title-container">
+        <div class="frame-title">
+          <h1>We Take Care Of Your Brand</h1>
+          <p>We care about our work and we care about our clients.</p>
+        </div>
+        <div class="frame-input">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter Your Email"
+          />
+
+          <button class="button primary">Let's talk</button>
+        </div>
+      </div>
+      <img src="assets/hero_section/hero_img.png" alt="hero-img" />
+    </section>
+    <section class="partners">
+      <div class="partner-logos container">
+        <h3>Companies we Work with</h3>
+        <div class="partner-logos-frame-1">
+          <a
+            href="https://partner1.com"
+            target="_blank"
+            rel="spotify"
+            aria-label="Partner 1"
+          >
+            <img src="assets/partners/company_logo.png" alt="spotify-logo" />
+          </a>
+          <a
+            href="https://partner2.com"
+            target="_blank"
+            rel="google"
+            aria-label="Partner 2"
+          >
+            <img src="assets/partners/company_logo_2.png" alt="google-logo" />
+          </a>
+          <a
+            href="https://partner3.com"
+            target="_blank"
+            rel="uber"
+            aria-label="Partner 3"
+          >
+            <img src="assets/partners/company_logo_3.png" alt="uber-logo" />
+          </a>
+          <a
+            href="https://partner4.com"
+            target="_blank"
+            rel="microsoft"
+            aria-label="Partner 4"
+          >
+            <img
+              src="assets/partners/company_logo_4.png"
+              alt="microsoft-logo"
+            />
+          </a>
+          <a
+            href="https://partner5.com"
+            target="_blank"
+            rel="shopify"
+            aria-label="Partner 5"
+          >
+            <img src="assets/partners/company_logo_5.png" alt="shopify-logo" />
+          </a>
+        </div>
+        <div class="partner-logos-frame-2">
+          <a
+            href="https://partner6.com"
+            target="_blank"
+            rel="evernote"
+            aria-label="Partner 6"
+          >
+            <img src="assets/partners/company_logo_6.png" alt="evernote-logo" />
+          </a>
+          <a
+            href="https://partner7.com"
+            target="_blank"
+            rel="adobe"
+            aria-label="Partner 7"
+          >
+            <img src="assets/partners/company_logo_7.png" alt="adobe-logo" />
+          </a>
+          <a
+            href="https://partner8.com"
+            target="_blank"
+            rel="paypal"
+            aria-label="Partner 8"
+          >
+            <img src="assets/partners/company_logo_8.png" alt="paypal-logo" />
+          </a>
+          <a
+            href="https://partner9.com"
+            target="_blank"
+            rel="amazon"
+            aria-label="Partner 9"
+          >
+            <img src="assets/partners/company_logo_9.png" alt="amazon-logo" />
+          </a>
+          <a
+            href="https://partner10.com"
+            target="_blank"
+            rel="asana"
+            aria-label="Partner 10"
+          >
+            <img src="assets/partners/company_logo_10.png" alt="asana-logo" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="commitments container">
+      <div class="commitments-frame-1">
+        <div class="commitments-frame-column">
+          <div class="column-padding">
+            <p class="big-number">245%</p>
+            <p>More revenues for the brand</p>
+          </div>
+          <div>
+            <p class="big-number">50+</p>
+            <p>brands trust us</p>
+          </div>
+        </div>
+        <div class="commitments-frame-column">
+          <div class="column-padding">
+            <p class="big-number">130K+</p>
+            <p>Audiences reached</p>
+          </div>
+          <div>
+            <p class="big-number">24+</p>
+            <p>Worldwide awards</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="commitments-frame-2">
+        <div class="commitments-frame-column column-margin">
+          <h2 class="big-number">commitments</h2>
+          <p>
+            We are committed to working with you collaboratively to understand
+            <br />
+            your goals and create a strategy that will achieve them.
+          </p>
+        </div>
+        <div>
+          <p><a link href="#" class="link-with-arrow"> Learn more → </a></p>
+        </div>
+      </div>
+    </section>
+    <section class="goals container">
+      <div class="goals-frame-left">
+        <div class="goals-text-frame-left">
+          <h2 class="big-number">How It Works</h2>
+          <p>
+            We believe that the best way to create successful marketing
+            campaigns is to work closely with our clients to understand their
+            goals and challenges.
+          </p>
+        </div>
+        <img src="assets/goals/img.png" alt="goals" />
+      </div>
+      <div class="goals-frame-right">
+        <div class="goals-frame-right-with-img">
+          <img
+            src="assets/goals/majesticons_dollar-circle-1.png"
+            alt="discovery"
+          />
+          <div class="goals-text-frame-right">
+            <h4>Discovery</h4>
+            <p>
+              We meet with you to learn about your business, your goals, and
+              your target audience.
+            </p>
+          </div>
+        </div>
+        <div class="goals-frame-right-with-img">
+          <img
+            src="assets/goals/majesticons_dollar-circle-2.png"
+            alt="strategy"
+          />
+          <div class="goals-text-frame-right">
+            <h4>Strategy</h4>
+            <p>
+              We develop a customized marketing strategy that is based on your
+              unique needs and goals.
+            </p>
+          </div>
+        </div>
+        <div class="goals-frame-right-with-img">
+          <img
+            src="assets/goals/majesticons_dollar-circle-3.png"
+            alt="execution"
+          />
+          <div class="goals-text-frame-right">
+            <h4>Execution</h4>
+            <p>
+              We execute our strategy using the latest digital marketing tools
+              and techniques.
+            </p>
+          </div>
+        </div>
+        <div class="goals-frame-right-with-img">
+          <img
+            src="assets/goals/majesticons_dollar-circle-4.png"
+            alt="measurement"
+          />
+          <div class="goals-text-frame-right">
+            <h4>Measurement</h4>
+            <p>
+              We track the results of our campaigns so that we can make
+              adjustments as needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio container">
+      <h2>Our Work</h2>
+      <p>A glimpse of our portfolio</p>
+      <div class="img-with-text-frame">
+        <div class="img-with-text">
+          <figure>
+            <img src="assets/portfolio/rectangle.png" alt="apple" />
+            <figcaption>Apple</figcaption>
+          </figure>
+        </div>
+        <div class="img-with-text">
+          <figure>
+            <img src="assets/portfolio/rectangle_1.png" alt="cola-cola" />
+            <figcaption>Cola-Cola</figcaption>
+          </figure>
+        </div>
+        <div class="img-with-text">
+          <figure>
+            <img src="assets/portfolio/rectangle_2.png" alt="nike" />
+            <figcaption>Nike</figcaption>
+          </figure>
+        </div>
+      </div>
+      <button class="button primary">See More</button>
+    </section>
+    <section class="banner container">
+        <div class="banner-frame">
+          <div class="banner-frame-left">
+            <h2>Elevate your brand Today!</h2>
+          </div>
+          <div class="banner-frame-right">
+            <p>
+              Ready to transform your digital dresence? Let's create magic
+              together! book our services now!
+            </p>
+            <button class="button primary">Book A Call</button>
+          </div>
+        </div>
+    </section>
+    <section class="team container">
+      <div class="team-frame-1">
+      <img src="assets/team/team.png" alt="team"/>
+      </div>
+
+      <div class="team-frame-2">
+     <div class="team-frame-column column-margin"> 
+          <h2 class="big-number">Meet Our Team</h2>
+          <p>
+            Discover the brilliance behind  Embrace. Our team blends 
+            <br />
+            innovation and artistry to craft digital wonders that captivate
+          </p>
+         </div>
+          <button class="button primary">Learn More</button>
+      </div>
+    </section>
+    <section class="testimonials container"> 
+        <div class="testimonials__header">
+          <h2>What Our Client Said About Us</h2>
+          <div class="slider__controls">
+            <button class="slider__btn slider__btn--left" aria-label="Previous">←</button>
+            <button class="slider__btn slider__btn--right" aria-label="Next">→</button>
+          </div>
+        </div>
+    
+        <div class="testimonials__slider">
+          <div class="testimonials__track">
+            <div class="testimonial testimonial--active">
+              <address class="testimonial__author">
+                <img src="assets/testimonial/testimonial_1.png" alt="" class="testimonial__photo" />
+                <div class="testimonial__info">
+                  <h4 class="testimonial__name">Amelia Joseph</h4>
+                  <p class="testimonial__position">Chief Manager</p>
+                </div>
+              </address>
+              <p class="testimonial__text">
+                My vision came alive effortlessly. Their blend of casual and professional approach made the process a breeze. Creativity flowed, and the results were beyond my expectations.
+              </p>
+            </div>
+    
+            <div class="testimonial">
+              <address class="testimonial__author">
+                <img src="assets/testimonial/testimonial_2.png" alt="" class="testimonial__photo" />
+                <div class="testimonial__info">
+                  <h4 class="testimonial__name">Jacob Joshua</h4>
+                  <p class="testimonial__position">Chief Manager</p>
+                </div>
+              </address>
+              <p class="testimonial__text">
+                I found the digital expertise I needed. Their creative-professional balance exceeded expectations. Friendly interactions, exceptional outcomes. For digital enchantment, it's got to be Embrace!
+              </p>
+            </div>
+    
+            <div class="testimonial">
+              <address class="testimonial__author">
+                <img src="assets/testimonial/testimonial_3.png" alt="" class="testimonial__photo" />
+                <div class="testimonial__info">
+                  <h4 class="testimonial__name">Jacob Joshua</h4>
+                  <p class="testimonial__position">Chief Manager</p>
+                </div>
+              </address>
+              <p class="testimonial__text">
+                Embrace really nails it! Creative brilliance, approachable style. They're the partners you want—artistry meets strategy. Thrilled with what they achieved!"
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="banner-2 container">
+      <div class="banner-2-frame">
+        <div class="banner-2-frame-left">
+          <h2>start your journey with us now</h2>
+          <button class="button primary">Start Now</button>
+        </div>
+        <div class="banner-2-frame-right"> 
+          <img src="assets/banner-2/ellipse.png" alt="ellipse"/>
+        </div> 
+      </div>
+    </section>
+    <section class="help-section container">
+      <div class="help-section-frame-1">
+        <div class="help-block">
+          <p>How do i sign up for the project?</p> 
+          <img src="assets/help_section/vector.png" alt="expand icon">
+        </div>
+        <div class="help-block">
+          <p>What thing that i should prepare before starting?</p> 
+          <img src="assets/help_section/vector.png" alt="expand icon">
+        </div>
+        <div class="help-block">
+          <p>Does my company need help for marketing advices?</p> 
+          <img src="assets/help_section/vector.png" alt="expand icon">
+        </div> 
+      </div>
+      <div class="help-section-frame-2">
+          <h2 class="big-number">How we can help you?
+          </h2>
+          <p>
+            Follow our newsletter. We will regulary update <br />
+            our latest project and availability.
+          </p>
+        <div class="frame-input">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Enter Your Email"
+          />
+
+          <button class="button primary">Let's talk</button>
+        </div>
+        <div>
+          <p><a link href="#" class="link-with-arrow"> More FAQ → </a></p>
+        </div>
+      </div>
+    </section>
+    <section class="bottom container">
+      <div class="bottom-frame-left">
         <div class="logo">
           <img src="assets/logo.png" width="144px" height="32px" alt="logo" />
         </div>
-
-        <!--  burger menu -->
-        <div class="burger" id="burgerMenu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="icons-bottom">
+                <img
+          src="assets/bottom/icon_instagram.png"
+          width="32px"
+          height="32px"
+          alt="icon_instagram"
+        />
+                  <img
+          src="assets/bottom/icon_twitter.png"
+          width="32px"
+          height="32px"
+          alt="icon_twitter"
+        />
+                  <img
+          src="assets/bottom/icon_facebook.png"
+          width="32px"
+          height="32px"
+          alt="icon_facebook"
+        />
         </div>
-
-        <div class="navigation" id="navigation">
-          <button>How It Works</button>
-          <button>Our Work</button>
-          <button>Pricing</button>
-          <button>About us</button>
-        </div>
-        <button class="button primary" id="callButton">Book A Call</button>
-      </header>
-      <section class="hero">
-        <div class="hero-title-container">
-          <div class="frame-title">
-            <h1>We Take Care Of Your Brand</h1>
-            <p>We care about our work and we care about our clients.</p>
-          </div>
-          <div class="frame-input">
-            <input
-              type="email"
-              class="form-control"
-              id="floatingInput"
-              placeholder="Enter Your Email"
-            />
-
-            <button class="button primary">Let's talk</button>
-          </div>
-        </div>
-        <img src="assets/hero_section/hero_img.png" alt="hero-img" />
-      </section>
-      <section class="partners"></section>
-      <section class="commitments"></section>
-      <section class="goals"></section>
-      <section class="portfolio"></section>
-      <section class="banner"></section>
-      <section class="team"></section>
-      <section class="testimonial"></section>
-      <section class="banner-2"></section>
-      <section class="help-section"></section>
-      <section class="bottom"></section>
-      <section class="footer"></section>
+        <button class="button primary" id="callButton">Contact us</button>
+      </div>
+      <div class="bottom-frame-right">
+            <ul>
+              <li><a href="#how-it-works">Work With Us</a></li>
+              <li><a href="#our-work">Advertise With Us</a></li>
+              <li><a href="#pricing">Support Us</a></li>
+              <li><a href="#about-us">Business Advices</a></li>
+            </ul>
+          <ul>
+            <li><a href="#how-it-works">Private Coaching</a></li>
+            <li><a href="#our-work">Our Work</a></li>
+            <li><a href="#pricing">Our Commitment </a></li>
+            <li><a href="#about-us">Our Team</a></li>
+          </ul>
+        <ul>
+          <li><a href="#pricing">About Us</a></li>
+          <li><a href="#about-us">FAQs</a></li>
+          <li><a href="#about-us">Report a Bug</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer">
+      <p class="footer-text">© 2022 Embrace, Inc. - All Rights Reserved</p>
+      <div class="footer-links-frame">
+        <a class="footer-link"
+         href="#">Term of use</a></li>
+        <a class="footer-link" href="#">Privacy policy </a></li>
     </div>
+    </section>
+   </div>
   </body>
 </html>

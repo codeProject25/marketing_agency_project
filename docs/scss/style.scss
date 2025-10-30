@@ -3,6 +3,17 @@
 @import "base/variables";
 @import "layout/header";
 @import "layout/hero";
+@import "layout/partners";
+@import "layout/commitments";
+@import "layout/goals";
+@import "layout/portfolio";
+@import "layout/banner";
+@import "layout/team";
+@import "layout/testimonials";
+@import "layout/banner-2";
+@import "layout/help";
+@import "layout/bottom";
+@import "layout/footer";
 
 *,
 *::before,
@@ -13,39 +24,100 @@
 }
 .container {
   width: 100%;
-  padding: 0 16px;
+  padding: 16px;
   margin: 0 auto;
 
   @include media-tablet {
-    padding: 0 32px;
+    padding: 36px;
   }
 
   @include media-laptop {
-    padding: 0px 120px;
+    padding: 120px;
   }
 }
 
 h1 {
-  color: #000;
-  @include typographyBase;
+  color: $color-black;
+  font-family: $font-family;
   font-size: $font-size-heading;
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
   letter-spacing: -4px;
   text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-heading;
+  }
+}
+
+h2 {
+  color: $color-black;
+  text-align: left;
+  font-family: $font-family;
+  font-size: $font-size-subheading-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-subheading;
+  }
+}
+
+h3 {
+  color: $color-black;
+  text-align: center;
+  font-family: $font-family;
+  font-size: $font-size-frame-heading-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-frame-heading;
+  }
+}
+
+h4 {
+  color: $color-black;
+  font-family: $font-family;
+  font-size: $font-size-frame-subheading;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-frame-subheading;
+  }
 }
 
 p {
   color: rgba(0, 0, 0, 0.6);
-  @include typographyBase;
+  font-family: $font-family;
   font-size: $font-size-card-subheading;
   font-weight: $font-weight-medium;
   line-height: $line-height-relaxed;
+  text-align: start;
+}
+
+.big-number {
+  color: $color-black;
+  font-family: $font-family;
+  font-size: $font-size-frame-heading-mobile;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+
+  @include media-laptop {
+    font-size: $font-size-subheading;
+  }
 }
 
 input {
   color: #aaa;
-  @include typographyBase;
+  font-family: $font-family;
   font-size: $font-size-text-medium;
   font-weight: $font-weight-medium;
   line-height: $line-height-normal;
@@ -53,8 +125,8 @@ input {
 }
 .button {
   color: $color-white;
-  @include typographyBase;
-  font-size: $font-size-text-medium;
+  font-family: $font-family;
+  font-size: $font-size-base;
   font-style: normal;
   font-weight: $font-weight-medium;
   line-height: $line-height-normal;
@@ -72,6 +144,7 @@ input {
   gap: 10px;
   border-radius: 70px;
   background: $color-primary;
+  min-width: 140px;
   transition:
     background 0.4s,
     color 0.2s;
@@ -83,19 +156,52 @@ input {
 }
 
 .navigation {
-  > button {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
     color: #000;
     background: $color-white;
-    @include typographyBase;
+    font-family: $font-family;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
     line-height: $line-height-normal;
     text-transform: capitalize;
     border: none;
     cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
 
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.link-with-arrow {
+  color: $color-primary;
+  font-family: font-family;
+  font-size: $font-size-text-medium;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: start;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
