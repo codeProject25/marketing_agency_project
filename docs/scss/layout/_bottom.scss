@@ -1,0 +1,129 @@
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $color-background;
+
+  .bottom-frame-left {
+    // display: flex;
+    // flex-direction: column;
+    text-align: center;
+    // gap: 24px;
+    margin: 24px 0;
+
+    .logo {
+      margin-bottom: 40px;
+    }
+
+    .icons-bottom {
+      display: block;
+      margin-bottom: 40px;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: transparent;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.7;
+          text-decoration: none;
+        }
+
+        img {
+          display: block;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+
+  .bottom-frame-right {
+    text-align: center;
+    ul {
+      list-style: none;
+
+      li {
+        text-align: center;
+        margin: 0 0 40px 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+        background: $color-background;
+        font-family: $font-family;
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        line-height: $line-height-normal;
+        text-transform: capitalize;
+        border: none;
+        cursor: pointer;
+        padding: 0 0.25rem;
+        display: inline-block;
+        box-shadow: inset 0 0 0 0 $color-primary;
+        transition: color 0.1s ease-in-out;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: row;
+    gap: 48px;
+
+    .bottom-frame-left {
+      text-align: unset;
+      align-items: flex-start;
+      flex: 1;
+      margin: 0;
+
+      button {
+        width: auto;
+      }
+    }
+
+    .bottom-frame-right {
+      display: flex;
+      ul {
+        margin-right: 40px;
+        align-items: flex-start;
+        li {
+          text-align: left;
+        }
+        a {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  @include media-laptop {
+    .bottom-frame-left {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .icons-bottom {
+        display: flex;
+        gap: 32px;
+      }
+    }
+
+    .bottom-frame-right {
+      gap: 60px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.commitments {
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    min-width: 260px;
+  }
+
+  @include media-tablet {
+    @include flexWrap;
+    flex-direction: row;
+  }
+  @include media-laptop {
+    @include flexWrap;
+    flex-direction: row;
+  }
+
+  .commitments-frame-column {
+    flex: 25%;
+  }
+
+  .commitments-frame-column.column-margin {
+    text-align: left;
+  }
+}

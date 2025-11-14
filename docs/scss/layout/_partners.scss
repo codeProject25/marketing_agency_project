@@ -1,0 +1,41 @@
+.partners {
+  background: $color-background;
+}
+
+.partner-logos-frame {
+  @include flexCenter;
+  flex-direction: column;
+
+  > a {
+    margin: 30px 0px;
+    flex: 0 0 50%;
+    text-align: center;
+  }
+
+  @include media-tablet {
+    @include flexSpaceEvenly;
+    margin: 78px 0px;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    a {
+      flex: 0 0 50%;
+    }
+  }
+
+  @include media-laptop {
+    @include flexSpaceCenter;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+
+    a {
+      flex: 0 0 18%;
+    }
+  }
+}

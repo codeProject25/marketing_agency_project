@@ -1,12 +1,4 @@
 // Typography mixins
-@mixin typographyBase {
-  font-feature-settings:
-    "liga" off,
-    "clig" off;
-  font-family: $font-family;
-  font-style: normal;
-}
-
 @mixin responsive-font($mobile, $tablet: null, $desktop: null) {
   font-size: $mobile;
 
@@ -23,6 +15,11 @@
   }
 }
 // Layout mixins
+@mixin flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @mixin flexSpaceBetween {
   display: flex;
   justify-content: space-between;
@@ -30,7 +27,7 @@
 
 @mixin flexSpaceEvenly {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 @mixin flexSpaceCenter {
