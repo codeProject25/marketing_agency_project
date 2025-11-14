@@ -19,6 +19,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 @mixin flexSpaceBetween {
   display: flex;
   justify-content: space-between;

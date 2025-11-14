@@ -49,6 +49,7 @@
   display: inline;
 
   &:hover {
-    text-decoration: underline;
+    color: $color-testimonal-background;
+    transition: color 0.1s ease-in-out;
   }
 }

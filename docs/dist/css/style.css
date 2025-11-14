@@ -145,8 +145,8 @@ header {
   flex-direction: column;
 }
 .partner-logos-frame > a {
-  min-width: 140px;
   margin: 30px 0px;
+  flex: 0 0 50%;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -161,6 +161,9 @@ header {
     max-width: 100px;
     height: auto;
   }
+  .partner-logos-frame a {
+    flex: 0 0 50%;
+  }
 }
 @media (min-width: 1024px) {
   .partner-logos-frame {
@@ -169,6 +172,9 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
+  }
+  .partner-logos-frame a {
+    flex: 0 0 18%;
   }
 }
 
@@ -847,7 +853,6 @@ header {
 }
 .bottom .bottom-frame-right ul a:hover {
   color: #3461ff;
-  transform: scale(1.1);
 }
 @media (min-width: 768px) {
   .bottom {
@@ -945,7 +950,8 @@ header {
   display: inline;
 }
 .footer-link:hover {
-  text-decoration: underline;
+  color: #f5f5f7;
+  transition: color 0.1s ease-in-out;
 }
 
 *,
@@ -1181,12 +1187,10 @@ input {
   cursor: pointer;
   padding: 0 0.25rem;
   display: inline-block;
-  box-shadow: inset 0 0 0 0 #3461ff;
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 .navigation a:hover {
-  box-shadow: inset 100px 0 0 0 #3461ff;
-  color: white;
+  color: #3461ff;
 }
 
 .link-with-arrow {
