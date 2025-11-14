@@ -27,11 +27,6 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-
-      > button {
-        background-color: $color-white;
-        color: $color-primary;
-      }
     }
 
     .banner-2-frame-right {

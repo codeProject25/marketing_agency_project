@@ -23,7 +23,18 @@
     img {
       width: 24px;
       height: 24px;
-      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+
+      &:hover {
+        cursor: pointer;
+        background: lighten($color-white, 45%);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba($color-primary, 0.3);
+      }
+      &:active {
+        transform: translateY(-2px);
+      }
     }
   }
 
