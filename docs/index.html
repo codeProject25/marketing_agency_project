@@ -6,28 +6,27 @@
     <title>Marketing Agency Project</title>
     <link rel="stylesheet" href="dist/css/style.css" />
   </head>
-  <body>
-    <!-- <div class="container"> -->
-    <header>
+  <body> 
+    <header class="nav__container">
       <div class="logo">
         <a href="#">
-        <img src="assets/logo.svg" width="144px" height="32px" alt="logo" />
+        <img src="assets/logo.svg" id="navbar_logo" width="144px" height="32px" alt="logo" />
       </a>
       </div>
 
-      <!--  burger menu -->
-      <div class="burger" id="burgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Navbar Section -->
+      <div class="burger" id="burger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-
       <nav class="navigation" id="navigation">
-        <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#our-work">Our Work</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#about-us">About Us</a></li>
+        <ul class="navbar__menu">
+          <li><a href="#how-it-works" class="navbar__links" id="how-it-works-page">How It Works</a></li>
+          <li><a href="#our-work" class="navbar__links" id="our-works-page">Our Work</a></li>
+          <li><a href="#pricing" class="navbar__links" id="pricing-page">Pricing</a></li>
+          <li><a href="#about-us" class="navbar__links" id="about-page">About Us</a></li>
         </ul>
       </nav>
       <button class="button primary" id="callButton">Book A Call</button>
@@ -172,7 +171,7 @@
       </div>
       
     </section>
-    <section class="goals container">
+    <section class="goals container" id="how-it-works">
       <div class="goals-frame-left">
         <div class="goals-text-frame-left">
           <h2 class="big-number">How It Works</h2>
@@ -239,7 +238,7 @@
         </div>
       </div>
     </section>
-    <section class="portfolio container">
+    <section class="portfolio container" id="our-work">
       <h2>Our Work</h2>
       <p>A glimpse of our portfolio</p>
       <div class="img-with-text-frame">
@@ -264,7 +263,7 @@
       </div>
       <button class="button primary">See More</button>
     </section>
-    <section class="banner container">
+    <section class="banner container" id="pricing">
         <div class="banner-frame">
           <div class="banner-frame-left">
             <h2>Elevate your brand Today!</h2>
@@ -278,7 +277,7 @@
           </div>
         </div>
     </section>
-    <section class="team container">
+    <section class="team container" id="about-us">
       <div class="team-frame-1">
       <img src="assets/team/team.png" alt="team"/>
       </div>
@@ -447,5 +446,7 @@
     </div>
     </section>
    </div>
+
+   <script src="main.js"></script>
   </body>
 </html>

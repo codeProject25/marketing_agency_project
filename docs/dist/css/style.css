@@ -2,6 +2,7 @@
 /*Spacing variables*/
 /* Typography */
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 88px;
@@ -28,14 +29,58 @@ header {
   }
 }
 
+.nav__container {
+  position: sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
 .navigation {
   display: none;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.navigation.active {
+  display: block;
+  top: 100%;
+  opacity: 1;
+  z-index: 99;
+  height: 20vh;
+  font-size: 20px;
 }
 @media (min-width: 1024px) {
   .navigation {
-    display: flex;
-    justify-content: center;
+    display: block;
+    position: static;
+    opacity: 1;
+    background: none;
+  }
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 55px;
+}
+.navbar__menu li {
+  margin: 16px 0;
+}
+@media (min-width: 1024px) {
+  .navbar__menu {
+    flex-direction: row;
+    align-items: center;
     gap: 40px;
+  }
+  .navbar__menu li {
+    margin: 0;
   }
 }
 
@@ -45,20 +90,39 @@ header {
   flex-direction: column;
   width: 32px;
   height: 24px;
-  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
 }
 .burger span {
-  display: block;
   height: 3px;
   width: 100%;
   background-color: #000000;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+}
+.burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 @media (min-width: 1024px) {
   .burger {
     display: none;
   }
+}
+
+.navbar__links {
+  display: inline-block;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: #000;
+  transition: border-bottom 0.3s ease;
 }
 
 .hero {
@@ -1190,6 +1254,10 @@ input {
   transition: color 0.1s ease-in-out;
 }
 .navigation a:hover {
+  color: #3461ff;
+}
+.navigation a.highlight {
+  border-bottom: 4px solid #3461ff;
   color: #3461ff;
 }
 

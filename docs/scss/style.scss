@@ -248,6 +248,11 @@ input {
     &:hover {
       color: $color-primary;
     }
+
+    &.highlight {
+      border-bottom: 4px solid $color-primary;
+      color: $color-primary;
+    }
   }
 }
 
