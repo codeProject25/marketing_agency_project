@@ -72,6 +72,7 @@ menuLinks.forEach((link) => {
       top: offsetPosition,
       behavior: "smooth",
     });
+
     // wait until scrolling finishes, then re-enable scroll listener
     const scrollCheck = setInterval(() => {
       if (Math.abs(window.scrollY - offsetPosition) < 2) {
@@ -102,3 +103,76 @@ navLogo.addEventListener("click", (e) => {
 window.addEventListener("scroll", highlightMenu);
 
 // HERO SECTION //
+
+// PORTFOLIO SECTION //
+
+// TESTIMONIAL SECTION //
+const slider = function () {
+  const track = document.querySelector(".testimonials__track");
+  const slides = document.querySelectorAll(".testimonial");
+  const btnLeft = document.querySelector(".slider__btn--left");
+  const btnRight = document.querySelector(".slider__btn--right");
+  let currentSlide = 0;
+  const maxSlide = slides.length;
+
+  // Functions
+  const updateButtons = () => {
+    btnLeft.classList.remove("slider__btn--active");
+    btnRight.classList.remove("slider__btn--active");
+
+    if (currentSlide === 0) {
+      btnRight.classList.add("slider__btn--active");
+    } else if (currentSlide === maxSlide - 1) {
+      btnLeft.classList.add("slider__btn--active");
+    } else {
+      btnLeft.classList.add("slider__btn--active");
+      btnRight.classList.add("slider__btn--active");
+    }
+  };
+
+  const updateActiveSlide = () => {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("testimonial--active", i === currentSlide);
+    });
+  };
+
+  const goToSlide = function (slideNum) {
+    track.style.transform = `translateX(-${slideNum * 30}%)`;
+    updateActiveSlide();
+    updateButtons();
+  };
+
+  // Next slide
+  const nextSlide = function () {
+    if (currentSlide === maxSlide - 1) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+    goToSlide(currentSlide);
+  };
+
+  const prevSlide = function () {
+    if (currentSlide === 0) {
+      currentSlide = maxSlide - 1;
+    } else {
+      currentSlide--;
+    }
+    goToSlide(currentSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+  };
+  init();
+
+  // Event handlers
+  btnRight.addEventListener("click", nextSlide);
+  btnLeft.addEventListener("click", prevSlide);
+  console.log(btnLeft, btnRight);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "ArrowRight") nextSlide();
+  });
+};
+slider();

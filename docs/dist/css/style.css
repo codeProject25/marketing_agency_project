@@ -479,7 +479,6 @@ header {
 .testimonials {
   padding: 48px 16px;
   width: 100%;
-  overflow: hidden;
 }
 @media (min-width: 768px) {
   .testimonials {
@@ -549,31 +548,30 @@ header {
     font-size: 24px;
   }
 }
-.slider__btn:hover:not(:disabled) {
-  background: #d2d5da;
+.slider__btn:hover {
+  background: rgb(203.3902439024, 207.8780487805, 214.6097560976);
   transform: scale(1.05);
 }
-.slider__btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-.slider__btn--right {
+.slider__btn--active {
   background: #3461ff;
   color: #ffffff;
+  border-color: #3461ff;
 }
-.slider__btn--right:hover:not(:disabled) {
+.slider__btn--active:hover {
   background: rgb(11.2, 65.2443349754, 255);
+  transform: scale(1.05);
 }
 
-.slide {
+.testimonials__slider {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .testimonials__track {
   display: flex;
   gap: 24px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 @media (min-width: 1024px) {
   .testimonials__track {
@@ -587,6 +585,7 @@ header {
   padding: 36px 32px;
   min-width: 100%;
   min-height: 300px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
@@ -618,6 +617,7 @@ header {
   display: flex;
   align-items: center;
   gap: 16px;
+  align-items: flex-start;
   margin-bottom: 28px;
   font-style: normal;
 }
