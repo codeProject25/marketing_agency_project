@@ -60,10 +60,10 @@ menuLinks.forEach((link) => {
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    // disable scroll highlighting temporarily
+    // Disable scroll highlighting temporarily
     isClickScrolling = true;
 
-    // remove highlight from all links first
+    // Remove highlight from all links first
     menuLinks.forEach((l) => l.classList.remove("highlight"));
     // highlight the clicked link immediately
     link.classList.add("highlight");
@@ -73,7 +73,7 @@ menuLinks.forEach((link) => {
       behavior: "smooth",
     });
 
-    // wait until scrolling finishes, then re-enable scroll listener
+    // After scrolling finishes,  re-enable scroll listener
     const scrollCheck = setInterval(() => {
       if (Math.abs(window.scrollY - offsetPosition) < 2) {
         isClickScrolling = false;
