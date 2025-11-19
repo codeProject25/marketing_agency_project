@@ -55,8 +55,7 @@ menuLinks.forEach((link) => {
     const target = document.getElementById(targetId);
     if (!target) return;
 
-    const headerOffset = document.querySelector("header").offsetHeight;
-    // sticky header height
+    const headerOffset = document.querySelector("header").offsetHeight; // The height of the header
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -65,7 +64,8 @@ menuLinks.forEach((link) => {
 
     // Remove highlight from all links first
     menuLinks.forEach((l) => l.classList.remove("highlight"));
-    // highlight the clicked link immediately
+
+    // Highlight the clicked link immediately
     link.classList.add("highlight");
 
     window.scrollTo({
@@ -86,6 +86,7 @@ menuLinks.forEach((link) => {
     menuLnks.classList.remove("active");
   });
 });
+
 // Smooth scroll for logo
 navLogo.addEventListener("click", (e) => {
   e.preventDefault();
@@ -105,6 +106,63 @@ window.addEventListener("scroll", highlightMenu);
 // HERO SECTION //
 
 // PORTFOLIO SECTION //
+// Data
+const images = [
+  "assets/portfolio/mc_donalds_logo.png",
+  "assets/portfolio/ikea_logo.png",
+  "assets/portfolio/xiaomi_logo.png",
+];
+const captions = ["McDonald's", "Ikea", "Xiaomi"];
+
+const links = [
+  "https://www.mcdonalds.com/de/de-de.html",
+  "https://www.ikea.com/de/de/",
+  "https://www.mi.com/de/",
+];
+let isOpen = false;
+
+document.getElementById("btnPortfolio").addEventListener("click", function () {
+  const container = document.querySelector(".img-with-text-frame");
+  const button = this;
+
+  if (!isOpen) {
+    // Use a card as a template
+    const template = container.querySelector(".img-with-text");
+    if (!template) return;
+
+    images.forEach((src, idx) => {
+      // Clone the template
+      const clone = template.cloneNode(true);
+
+      clone.classList.add("extra-item");
+
+      // Update link, image and caption inside the clone
+      const link = clone.querySelector("a");
+      const img = clone.querySelector("img");
+      const caption = clone.querySelector("figcaption");
+
+      if (link && links[idx]) {
+        link.href = links[idx];
+        link.target = "_blank";
+      }
+
+      if (img) img.src = src;
+      if (img && captions[idx]) img.alt = captions[idx];
+      if (caption && captions[idx]) caption.textContent = captions[idx];
+
+      // Append clone to container
+      container.appendChild(clone);
+    });
+
+    button.textContent = "Close";
+    isOpen = true;
+  } else {
+    // Remove only the clones
+    container.querySelectorAll(".extra-item").forEach((el) => el.remove());
+    button.textContent = "See More";
+    isOpen = false;
+  }
+});
 
 // TESTIMONIAL SECTION //
 const slider = function () {
