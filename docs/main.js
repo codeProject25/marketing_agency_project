@@ -154,7 +154,7 @@ document.getElementById("btnPortfolio").addEventListener("click", function () {
       container.appendChild(clone);
     });
 
-    button.textContent = "Close";
+    button.textContent = "See less";
     isOpen = true;
   } else {
     // Remove only the clones
@@ -194,8 +194,20 @@ const slider = function () {
     });
   };
 
+  const getSlideWidth = () => {
+    const slideWidth = slides[0].offsetWidth;
+    const gap = 24; // gap from scss
+
+    if (window.innerWidth >= 1024) {
+      return slideWidth + 32; // + gap from scss
+    }
+    return slideWidth + gap;
+  };
+
   const goToSlide = function (slideNum) {
-    track.style.transform = `translateX(-${slideNum * 30}%)`;
+    const slideWidth = getSlideWidth();
+    const translateValue = slideNum * slideWidth;
+    track.style.transform = `translateX(-${translateValue}px)`;
     updateActiveSlide();
     updateButtons();
   };
@@ -224,13 +236,67 @@ const slider = function () {
   };
   init();
 
+  // Recalculate on window resize
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      goToSlide(currentSlide);
+    }, 250);
+  });
+
   // Event handlers
   btnRight.addEventListener("click", nextSlide);
   btnLeft.addEventListener("click", prevSlide);
-  console.log(btnLeft, btnRight);
+
   document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowLeft") prevSlide();
     if (e.key === "ArrowRight") nextSlide();
   });
 };
+
+// HELP SECTION //
+const initFAQ = function () {
+  const faqIcons = document.querySelectorAll(".icon-svg[data-faq]");
+
+  faqIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+      const faqNumber = this.getAttribute("data-faq");
+      const answer = document.querySelector(
+        `[data-faq-content="${faqNumber}"]`
+      );
+      const isOpen = answer.classList.contains("active");
+
+      // Close all other FAQs first -> accordion behavior
+      document.querySelectorAll(".answer-content").forEach((otherAnswer) => {
+        if (otherAnswer !== answer) {
+          otherAnswer.classList.remove("active");
+          otherAnswer.style.maxHeight = null;
+        }
+      });
+
+      // Remove rotate class from all other icons
+      faqIcons.forEach((otherIcon) => {
+        if (otherIcon !== icon) {
+          otherIcon.classList.remove("rotate");
+        }
+      });
+
+      // Toggle the clicked FAQ
+      if (!isOpen) {
+        answer.classList.add("active");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        this.classList.add("rotate");
+      } else {
+        // Close
+        answer.classList.remove("active");
+        answer.style.maxHeight = null;
+        this.classList.remove("rotate");
+      }
+    });
+  });
+};
+
+// CALL FUNCTIONS //
 slider();
+initFAQ();
