@@ -1187,7 +1187,7 @@ header {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 70%;
   max-width: 500px;
   background-color: #ffffff;
   padding: 48px 32px;
@@ -1302,6 +1302,7 @@ header {
   background-color: #ffffff;
   color: #000000;
   transition: all 0.3s ease;
+  text-transform: none;
 }
 .modal__form input::placeholder {
   color: #aaa;
@@ -1315,7 +1316,51 @@ header {
 .modal__form input:hover {
   border-color: rgba(0, 0, 0, 0.2);
 }
+.modal__form input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+.modal__form input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+.modal__form input.success {
+  border-color: #10b981;
+}
+.modal__form input.success:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
 
+.modal__form-group {
+  position: relative;
+}
+
+.modal__error-message {
+  color: #ef4444;
+  font-family: "General Sans Variable", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 6px;
+  padding-left: 4px;
+  display: none;
+  animation: slideDown 0.3s ease;
+}
+.modal__error-message.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .modal__cta-container {
   margin-top: 16px;
   display: flex;

@@ -36,6 +36,237 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+// Modal Form Validation
+class ModalValidator {
+  constructor(formSelector) {
+    this.form = document.querySelector(formSelector);
+    this.fullNameInput = this.form.querySelector("#fullName");
+    this.emailInput = this.form.querySelector("#email");
+    this.phoneInput = this.form.querySelector("#phone");
+
+    this.init();
+  }
+
+  init() {
+    // Real-time validation on blur
+    this.fullNameInput.addEventListener("blur", () => this.validateFullName());
+    this.emailInput.addEventListener("blur", () => this.validateEmail());
+    this.phoneInput.addEventListener("blur", () => this.validatePhone());
+
+    // Clear error on focus
+    [this.fullNameInput, this.emailInput, this.phoneInput].forEach((input) => {
+      input.addEventListener("focus", () => this.clearError(input));
+    });
+
+    // Form submission
+    this.form.addEventListener("submit", (e) => this.handleSubmit(e));
+  }
+
+  validateFullName() {
+    const value = this.fullNameInput.value.trim();
+    const nameRegex = /^[a-zA-Z\s]{2,50}$/;
+
+    if (!value) {
+      this.showError(this.fullNameInput, "Please enter your full name");
+      return false;
+    }
+
+    if (!nameRegex.test(value)) {
+      this.showError(
+        this.fullNameInput,
+        "Please enter a valid name (letters only, 2-50 characters)"
+      );
+      return false;
+    }
+
+    // Check if it contains at least first and last name
+    if (value.split(" ").filter((part) => part.length > 0).length < 2) {
+      this.showError(
+        this.fullNameInput,
+        "Please enter both first and last name"
+      );
+      return false;
+    }
+
+    this.showSuccess(this.fullNameInput);
+    return true;
+  }
+
+  validateEmail() {
+    const value = this.emailInput.value.trim();
+    const emailRegex = /^[a-zA-Z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+    if (!value) {
+      this.showError(this.emailInput, "please enter your email address");
+      return false;
+    }
+
+    // Check if domain part (after @) contains uppercase letters
+    const parts = value.split("@");
+    if (parts.length === 2 && parts[1] !== parts[1].toLowerCase()) {
+      this.showError(
+        this.emailInput,
+        "domain must be in lowercase (e.g., @gmail.com, not @Gmail.Com)"
+      );
+      return false;
+    }
+
+    if (!emailRegex.test(value)) {
+      this.showError(
+        this.emailInput,
+        "please enter a valid email address (e.g., john.doe@gmail.com)"
+      );
+      return false;
+    }
+
+    this.showSuccess(this.emailInput);
+    return true;
+  }
+
+  validatePhone() {
+    const value = this.phoneInput.value.trim();
+    // Regex for international phone format
+    const phoneRegex =
+      /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,5}$/;
+
+    if (!value) {
+      this.showError(this.phoneInput, "Please enter your phone number");
+      return false;
+    }
+
+    if (!phoneRegex.test(value) || value.replace(/\D/g, "").length < 10) {
+      this.showError(
+        this.phoneInput,
+        "Please enter a valid phone number (min 10 digits)"
+      );
+      return false;
+    }
+
+    this.showSuccess(this.phoneInput);
+    return true;
+  }
+
+  showError(input, message) {
+    const formGroup = input.closest(".modal__form-group");
+
+    // Remove any existing error message
+    const existingError = formGroup.querySelector(".modal__error-message");
+    if (existingError) {
+      existingError.remove();
+    }
+
+    // Add error class
+    input.classList.add("error");
+    input.classList.remove("success");
+
+    // Create and append error message
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "modal__error-message show";
+    errorDiv.textContent = message;
+    formGroup.appendChild(errorDiv);
+  }
+
+  showSuccess(input) {
+    const formGroup = input.closest(".modal__form-group");
+
+    // Remove error message if exists
+    const existingError = formGroup.querySelector(".modal__error-message");
+    if (existingError) {
+      existingError.remove();
+    }
+
+    // Add success class
+    input.classList.remove("error");
+    input.classList.add("success");
+  }
+
+  clearError(input) {
+    const formGroup = input.closest(".modal__form-group");
+    const errorMessage = formGroup.querySelector(".modal__error-message");
+
+    if (errorMessage) {
+      errorMessage.classList.remove("show");
+      setTimeout(() => errorMessage.remove(), 300);
+    }
+
+    input.classList.remove("error");
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    // Validate all fields
+    const isNameValid = this.validateFullName();
+    const isEmailValid = this.validateEmail();
+    const isPhoneValid = this.validatePhone();
+
+    // If all valid, submit the form
+    if (isNameValid && isEmailValid && isPhoneValid) {
+      this.submitForm();
+    } else {
+      // Focus on first invalid field
+      if (!isNameValid) {
+        this.fullNameInput.focus();
+      } else if (!isEmailValid) {
+        this.emailInput.focus();
+      } else if (!isPhoneValid) {
+        this.phoneInput.focus();
+      }
+    }
+  }
+
+  resetForm() {
+    this.form.reset();
+    [this.fullNameInput, this.emailInput, this.phoneInput].forEach((input) => {
+      input.classList.remove("error", "success");
+      const formGroup = input.closest(".modal__form-group");
+      const errorMessage = formGroup.querySelector(".modal__error-message");
+      if (errorMessage) {
+        errorMessage.remove();
+      }
+    });
+  }
+
+  closeModal() {
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
+}
+
+// Initialize the validator when DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  const validator = new ModalValidator(".modal__form");
+
+  // Modal open/close functionality
+  const modal = document.querySelector(".modal");
+  const overlay = document.querySelector(".overlay");
+  const btnCloseModal = document.querySelector(".btn--close-modal");
+  const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+
+  const openModal = function () {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  };
+
+  const closeModal = function () {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+    validator.resetForm();
+  };
+
+  btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
+  btnCloseModal.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+});
+
 // Display Mobile Menu
 const mobileMenu = () => {
   menu.classList.toggle("is-active");
