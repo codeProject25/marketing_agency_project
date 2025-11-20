@@ -1,9 +1,41 @@
 // Variables
+// Header
 const menu = document.querySelector("#burger-menu");
 const menuLnks = document.querySelector("#navigation");
 const navLogo = document.querySelector("#navbar_logo");
 
-// HEADER //
+// Modal
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".btn--close-modal");
+const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+
+// Show active menu when scrolling
+const sections = document.querySelectorAll("section");
+const menuLinks = document.querySelectorAll(".navbar__links");
+
+// MODAL //
+const openModal = function (e) {
+  e.preventDefault();
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
 // Display Mobile Menu
 const mobileMenu = () => {
   menu.classList.toggle("is-active");
@@ -13,9 +45,6 @@ const mobileMenu = () => {
 menu.addEventListener("click", mobileMenu);
 
 // Show active menu when scrolling
-const sections = document.querySelectorAll("section");
-const menuLinks = document.querySelectorAll(".navbar__links");
-
 let isClickScrolling = false;
 
 const highlightMenu = () => {
@@ -103,7 +132,7 @@ navLogo.addEventListener("click", (e) => {
 
 window.addEventListener("scroll", highlightMenu);
 
-// HERO SECTION //
+// HEADER & BOTTOM SECTION //
 
 // PORTFOLIO SECTION //
 // Data
