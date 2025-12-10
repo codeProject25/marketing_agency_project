@@ -1,69 +1,3 @@
-/*.portfolio {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-
-  h2,
-  p {
-    text-align: center;
-  }
-}
-
-.img-with-text-frame {
-  display: inline-flex;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-  margin: 40px 0px;
-  max-width: 100%;
-  flex-wrap: wrap;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  figcaption {
-    color: $color-black;
-    font-family: $font-family;
-    font-size: $font-size-card-heading;
-
-    font-weight: $font-weight-medium;
-    line-height: $line-height-normal;
-    text-transform: capitalize;
-  }
-
-  @include media-laptop {
-    flex-wrap: nowrap;
-  }
-}
-
-// ensure each card has a consistent size and doesn't stretch 
-.img-with-text {
-  flex: 0 0 350px; /* don't grow, don't shrink, basis 220px 
-  max-width: 220px;
-  text-align: center;
-}
-
-//keep figure as block with consistent aspect ratio container (optional) 
-.img-with-text figure {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-// force images to fit nicely inside the card 
-.img-with-text img {
-  width: 100%;
-  height: 200px;
-
-  border-radius: 20px;
-  display: block;
-} 
-*/
-
 .portfolio {
   display: flex;
   flex-direction: column;
@@ -87,6 +21,11 @@
 
 .img-with-text {
   text-align: center;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
 
   a {
     text-decoration: none;
@@ -100,12 +39,13 @@
   }
 
   figcaption {
-    color: $color-black;
+    color: $color-silver;
     font-family: $font-family;
-    font-size: $font-size-card-heading;
+    font-size: $font-size-text-medium;
     font-weight: $font-weight-medium;
     line-height: $line-height-normal;
     text-transform: capitalize;
+    margin-top: 15px;
   }
 
   img {
@@ -118,9 +58,24 @@
   }
 
   &:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
   }
+}
+
+.img-with-text.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.img-with-text.extra-item {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.img-with-text.extra-item.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (min-width: 600px) {

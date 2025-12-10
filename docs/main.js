@@ -265,6 +265,11 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModal();
     }
   });
+
+  document.addEventListener("submit", function (e) {
+    e.preventDefault();
+    closeModal();
+  });
 });
 
 // Display Mobile Menu
@@ -393,33 +398,39 @@ document.getElementById("btnPortfolio").addEventListener("click", function () {
     images.forEach((src, idx) => {
       // Clone the template
       const clone = template.cloneNode(true);
-
       clone.classList.add("extra-item");
 
-      // Update link, image and caption inside the clone
       const link = clone.querySelector("a");
       const img = clone.querySelector("img");
       const caption = clone.querySelector("figcaption");
 
-      if (link && links[idx]) {
-        link.href = links[idx];
-        link.target = "_blank";
-      }
+      link.href = links[idx];
+      img.src = src;
+      img.alt = captions[idx];
+      caption.textContent = captions[idx];
 
-      if (img) img.src = src;
-      if (img && captions[idx]) img.alt = captions[idx];
-      if (caption && captions[idx]) caption.textContent = captions[idx];
-
-      // Append clone to container
       container.appendChild(clone);
+
+      // Show smoothly
+      requestAnimationFrame(() => {
+        clone.classList.add("show");
+      });
     });
 
-    button.textContent = "See less";
+    button.textContent = "Show less";
     isOpen = true;
   } else {
-    // Remove only the clones
-    container.querySelectorAll(".extra-item").forEach((el) => el.remove());
-    button.textContent = "See More";
+    // Close smoothly
+    const extras = container.querySelectorAll(".extra-item");
+    extras.forEach((el) => {
+      el.classList.remove("show");
+      el.classList.add("hidden");
+
+      // delete after animation
+      setTimeout(() => el.remove(), 350);
+    });
+
+    button.textContent = "Show more";
     isOpen = false;
   }
 });

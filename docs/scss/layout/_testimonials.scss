@@ -135,22 +135,6 @@
     transform: translateY(-8px) scale(1.02); // Reduced scale from potential larger value
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15); // Increased shadow
     z-index: 10; // Bring card forward
-
-    .testimonial__name {
-      font-size: calc(#{$font-size-card-subheading} + 2px);
-
-      @include media-laptop {
-        font-size: calc(#{$font-size-card-heading} + 2px);
-      }
-    }
-
-    .testimonial__text {
-      font-size: calc(#{$font-size-text-tiny} + 1px);
-
-      @include media-laptop {
-        font-size: calc(#{$font-size-text-tiny} + 1px);
-      }
-    }
   }
 
   // Blue card variant
@@ -208,9 +192,6 @@
   @include media-laptop {
     width: 68px;
     height: 68px;
-  }
-  .testimonial:hover & {
-    transform: scale(1.05);
   }
 }
 
