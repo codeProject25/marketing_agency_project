@@ -1,4 +1,5 @@
 header {
+  position: relative;
   @include flexSpaceBetween;
   height: 88px;
   align-items: center;
@@ -18,13 +19,58 @@ header {
     display: block;
   }
 }
-
+.nav__container {
+  position: sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
 .navigation {
   display: none;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0;
+  transition: all 0.5s ease;
+
+  &.active {
+    display: block;
+    top: 100%;
+    opacity: 1;
+    z-index: 99;
+    height: 20vh;
+    font-size: $font-size-card-subheading;
+  }
 
   @include media-laptop {
-    @include flexSpaceCenter;
+    display: block;
+    position: static;
+    opacity: 1;
+    background: none;
+  }
+}
+
+.navbar__menu {
+  @include flexCenter;
+  flex-direction: column;
+  gap: 55px;
+
+  li {
+    margin: 16px 0; // spacing on mobile
+  }
+
+  @include media-laptop {
+    flex-direction: row;
+    align-items: center;
     gap: 40px;
+    // top: 0px;
+
+    li {
+      margin: 0; // reset for desktop
+    }
   }
 }
 
@@ -33,18 +79,39 @@ header {
   flex-direction: column;
   width: 32px;
   height: 24px;
-  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
 
   span {
-    display: block;
     height: 3px;
     width: 100%;
     background-color: $color-black;
     border-radius: 2px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
+  }
+
+  &.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  &.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  &.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   @include media-laptop {
     display: none;
   }
+}
+
+.navbar__links {
+  display: inline-block;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: #000;
+  transition: border-bottom 0.3s ease;
 }

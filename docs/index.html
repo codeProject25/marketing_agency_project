@@ -6,31 +6,30 @@
     <title>Marketing Agency Project</title>
     <link rel="stylesheet" href="dist/css/style.css" />
   </head>
-  <body>
-    <!-- <div class="container"> -->
-    <header>
+  <body> 
+    <header class="nav__container">
       <div class="logo">
         <a href="#">
-        <img src="assets/logo.svg" width="144px" height="32px" alt="logo" />
+        <img src="assets/logo.svg" id="navbar_logo" width="144px" height="32px" alt="logo" />
       </a>
       </div>
 
-      <!--  burger menu -->
-      <div class="burger" id="burgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Navbar Section -->
+      <div class="burger" id="burger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-
       <nav class="navigation" id="navigation">
-        <ul>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#our-work">Our Work</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#about-us">About Us</a></li>
+        <ul class="navbar__menu">
+          <li><a href="#how-it-works" class="navbar__links" id="how-it-works-page">How It Works</a></li>
+          <li><a href="#our-work" class="navbar__links" id="our-works-page">Our Work</a></li>
+          <li><a href="#pricing" class="navbar__links" id="pricing-page">Pricing</a></li>
+          <li><a href="#about-us" class="navbar__links" id="about-page">About Us</a></li>
         </ul>
       </nav>
-      <button class="button primary" id="callButton">Book A Call</button>
+      <button class="button primary btn--show-modal" id="callButton">Book A Call</button>
     </header>
     <section class="hero container">
       <div class="hero-title-container">
@@ -46,7 +45,7 @@
             placeholder="Enter Your Email"
           />
 
-          <button class="button primary">Let's talk</button>
+          <button class="button primary btn--show-modal">Let's talk</button>
         </div>
       </div>
       <img src="assets/hero_section/hero_img.png" alt="hero-img" />
@@ -172,7 +171,7 @@
       </div>
       
     </section>
-    <section class="goals container">
+    <section class="goals container" id="how-it-works">
       <div class="goals-frame-left">
         <div class="goals-text-frame-left">
           <h2 class="big-number">How It Works</h2>
@@ -239,32 +238,38 @@
         </div>
       </div>
     </section>
-    <section class="portfolio container">
+    <section class="portfolio container" id="our-work">
       <h2>Our Work</h2>
       <p>A glimpse of our portfolio</p>
       <div class="img-with-text-frame">
         <div class="img-with-text">
+          <a href="https://www.apple.com/" target="_blank">
           <figure>
-            <img src="assets/portfolio/rectangle.png" alt="apple" />
+            <img src="assets/portfolio/apple_logo.png" alt="apple" />
             <figcaption>Apple</figcaption>
           </figure>
+        </a>
         </div>
         <div class="img-with-text">
+          <a href="https://www.coca-colacompany.com/" target="_blank">
           <figure>
-            <img src="assets/portfolio/rectangle_1.png" alt="cola-cola" />
+            <img src="assets/portfolio/cola_logo.png" alt="cola-cola" />
             <figcaption>Cola-Cola</figcaption>
           </figure>
+        </a>
         </div>
         <div class="img-with-text">
+          <a href="https://www.nike.com/de/" target="_blank">
           <figure>
-            <img src="assets/portfolio/rectangle_2.png" alt="nike" />
+            <img src="assets/portfolio/nike_logo.png" alt="nike" />
             <figcaption>Nike</figcaption>
           </figure>
+        </a>
         </div>
       </div>
-      <button class="button primary">See More</button>
+      <button class="button primary" id="btnPortfolio">Show More</button>
     </section>
-    <section class="banner container">
+    <section class="banner container" id="pricing">
         <div class="banner-frame">
           <div class="banner-frame-left">
             <h2>Elevate your brand Today!</h2>
@@ -274,11 +279,11 @@
               Ready to transform your digital dresence? Let's create magic
               together! book our services now!
             </p>
-            <button class="button primary button-white">Book A Call</button>
+            <button class="button primary btn--show-modal button-white">Book A Call</button>
           </div>
         </div>
     </section>
-    <section class="team container">
+    <section class="team container" id="about-us">
       <div class="team-frame-1">
       <img src="assets/team/team.png" alt="team"/>
       </div>
@@ -344,7 +349,7 @@
                 Embrace really nails it! Creative brilliance, approachable style. They're the partners you want—artistry meets strategy. Thrilled with what they achieved!"
               </p>
             </div>
-          </div>
+          </div> 
         </div>
     </section>
     <section class="banner-2 container">
@@ -359,21 +364,38 @@
       </div>
     </section>
     <section class="help-section container">
-      <div class="help-section-frame-1">
-        <div class="help-block">
-          <p>How do i sign up for the project?</p> 
-          <img class="icon-svg" src="assets/help_section/vector.svg" alt="expand icon">
-        </div>
-        <div class="help-block">
-          <p>What thing that i should prepare before starting?</p> 
-          <img class="icon-svg" src="assets/help_section/vector.svg" alt="expand icon">
-        </div>
-        <div class="help-block">
-          <p>Does my company need help for marketing advices?</p> 
-          <img class="icon-svg" src="assets/help_section/vector.svg" alt="expand icon">
-        </div> 
+   <div class="help-section-frame-1">
+    <div class="help-block">
+      <div class="question-wrapper">
+        <p>How do i sign up for the project?</p> 
+        <img class="icon-svg" src="assets/help_section/vector.svg" data-faq="1" alt="toggle FAQ">
       </div>
-      <div class="help-section-frame-2">
+      <div class="answer-content" data-faq-content="1">
+        <p>To sign up for the project, simply click <strong>"Let's Talk"</strong> and complete our short onboarding form. Once submitted, you'll receive a link to book a quick discovery call with our team. After the call, we'll send you a customized proposal outlining the project scope and pricing. Review and sign the proposal digitally, and we'll begin onboarding right away. Our support team is here if you need help at any step.</p>
+      </div>
+    </div>
+    
+    <div class="help-block">
+      <div class="question-wrapper">
+        <p>What thing that i should prepare before starting?</p> 
+        <img class="icon-svg" src="assets/help_section/vector.svg" data-faq="2" alt="toggle FAQ">
+      </div>
+      <div class="answer-content" data-faq-content="2">
+        <p>Before starting, you should prepare any brand materials you already have, such as logos, images, or style guidelines. It’s also helpful to outline your project goals, target audience, and desired timeline. </p>
+      </div>
+    </div>
+    
+    <div class="help-block">
+      <div class="question-wrapper">
+        <p>Does my company need help for marketing advices?</p> 
+        <img class="icon-svg" src="assets/help_section/vector.svg" data-faq="3" alt="toggle FAQ">
+      </div>
+      <div class="answer-content" data-faq-content="3">
+        <p>Whether your company needs marketing advice depends on your current challenges and growth goals. If you’re struggling to reach new customers, improve conversions, or stand out from competitors, professional guidance can make a major difference. Our team is here to evaluate your situation and recommend only what you truly need.</p>
+      </div>
+    </div>
+  </div>
+    <div class="help-section-frame-2">
           <h2 class="big-number">How we can help you?
           </h2>
           <p>
@@ -388,7 +410,7 @@
             placeholder="Enter Your Email"
           />
 
-          <button class="button primary">Let's talk</button>
+          <button class="button primary btn--show-modal">Let's talk</button>
         </div>
         <a link href="#" class="link-with-arrow"> More FAQ → </a>
         <!-- <div>
@@ -416,7 +438,7 @@
             <img src="assets/bottom/icon_facebook.svg" alt="" class="social-icon" />
           </a>
         </div>
-        <button class="button primary" id="callButton">Contact us</button>
+        <button class="button primary btn--show-modal" id="callButton">Contact us</button>
       </div>
       <div class="bottom-frame-right">
             <ul>
@@ -447,5 +469,37 @@
     </div>
     </section>
    </div>
+
+
+   <div class="modal hidden">
+    <button class="btn--close-modal">X</button>
+    <h2 class="modal__header">Let's Start Something Great</h2>
+    <p class="modal__subheader">We're excited to hear from you!</p>
+    
+    <form class="modal__form">
+      <div class="modal__form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="John Doe" />
+      </div>
+      
+      <div class="modal__form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" />
+      </div>
+      
+      <div class="modal__form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
+      </div>
+      
+      <div class="modal__cta-container">
+        <p class="modal__message">✨ We'll get back to you within 24 hours!</p>
+        <button type="submit">Get In Touch</button>
+      </div>
+    </form>
+  </div>
+  <div class="overlay hidden"></div>
+
+   <script src="main.js"></script>
   </body>
 </html>
